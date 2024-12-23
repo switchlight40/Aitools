@@ -20,8 +20,3 @@ This is just a small little thing that i made and im still new to programming so
 - json
 - requests
 
-# Ai-tools
-# Ai-tools
-# Ai-tools
-# Ai-tools
-# Ai-tools
