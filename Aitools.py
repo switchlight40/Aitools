@@ -56,17 +56,17 @@ class Ai():
 
 #Ollama related RAW functions        
     def generateraw(self,prompt,stream: bool = False):
-        
         data = {
             "model": self.model,
             "stream": stream,
-            "message": prompt
+            "prompt": prompt
+
         }
         url = self.addressraw + "/api/generate"
-        jsonresponse = requests.post(url,json=data)
-        pyresponse = json.loads(jsonresponse)
-        content = pyresponse["message"]["content"]
-        return content
+        response = requests.post(url,json=data)
+        pyresponse = json.loads(response.text)
+        return pyresponse["response"]
+        
         
     def chatraw(self,prompt,stream: bool = False):
         self.messages.append({
@@ -79,8 +79,8 @@ class Ai():
             "messages": self.messages
         }
         url = self.addressraw + "/api/chat"
-        jsonresponse = requests.post(url,json=data)
-        pyresponse = json.loads(jsonresponse)
+        response = requests.post(url,json=data)
+        pyresponse = json.loads(response.text)
         content = pyresponse["message"]["content"]
         return content
         
