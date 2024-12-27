@@ -95,7 +95,7 @@ class Ai():
             text=str(text),
             voice=self.voice,
             model="eleven_turbo_v2.5",
-            voice_settings=self.voicesettings
+            voice_settings=self._voicesettings
 
         )
 
