@@ -108,8 +108,8 @@ class Ai():
         
         return True
 
-    def playaudio(audio):
-        play(audio)
+    def playaudio(audio,ffmpeg = True):
+        play(audio,use_ffmpeg=ffmpeg)
 
 #Speach recognition functions
     def stt(self,text):
